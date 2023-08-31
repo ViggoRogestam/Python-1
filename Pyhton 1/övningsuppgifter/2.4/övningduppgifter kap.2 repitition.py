@@ -84,3 +84,4 @@ print ("|", total_sausage_price + total_vegan_sausage_price + total_drinks_price
 print("""
 - -- - -- - -- - -- - -- - -- - -- -""")
 """
+
