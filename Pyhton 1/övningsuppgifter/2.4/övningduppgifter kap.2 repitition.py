@@ -1,4 +1,4 @@
-""""
+
 # 2.1
 citat = input("datatyper har inbyggda metoder")
 print(citat.upper())
@@ -84,4 +84,3 @@ print ("|", total_sausage_price + total_vegan_sausage_price + total_drinks_price
 print("""
 - -- - -- - -- - -- - -- - -- - -- -""")
 
-"""
