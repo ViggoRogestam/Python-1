@@ -1,0 +1,5 @@
+tal1 = int(input("mata in ett tal"))
+tal2 = int(input("mata in ett till tal"))
+tal3 = int(input("mata in ett sista tal"))
+highest_number = max(tal1, tal2, tal3)
+print(highest_number)
