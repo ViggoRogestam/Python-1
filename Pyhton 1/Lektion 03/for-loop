@@ -1,0 +1,14 @@
+#for-loop
+"""
+total = 0
+for counter in range(100):
+    total += 10
+    print(total)
+"""
+start = int(input("Enter starting Value >"))
+step = int(input("Enter Increment >"))
+stop = int(input("Enter Stop Value >"))
+
+for value in range(start, stop, step):
+    print(value)
+    
