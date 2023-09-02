@@ -1,4 +1,4 @@
-
+#Räkna medelvärde, största och minsta tal
 biggest_number = float('-inf')
 smallest_number = float('inf')
 sum = 0
