@@ -23,10 +23,10 @@ print(text)
 my_file.close()
 
 
-# Öppna en fil med with
+# Öppna en fil med with (a+ = appaend och läs)
 with open('textfil.txt', "a+") as my_file:
     my_file.write("rad 4.\n")
-    my_file.seek(0)
+    my_file.seek(0) # Gå till filens första position
     text = my_file.read()
 print(text)
 
