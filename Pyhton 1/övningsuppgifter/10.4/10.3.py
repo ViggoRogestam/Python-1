@@ -13,7 +13,6 @@ with open('database.csv', 'r') as csv_file:
 
     people_data = list(csv_reader)
 
-
 while True:
     os.system('cls' if os.name == 'nt' else 'clear')  # rensar terminalen
     # Layout
@@ -37,7 +36,6 @@ while True:
                     print(f"{key}: {value}")
                 print('-' * ui_width)
                 input('Press any key to continue...')
-
 
     elif indata == "scan_f":
         name = input('Enter Forename >')
