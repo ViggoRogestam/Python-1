@@ -24,3 +24,4 @@ for pet in pets:
 
 # Skriv ut namnet på första husdjuret
 print(f'\n{person["pets"][0]["name"]}')
+ 
