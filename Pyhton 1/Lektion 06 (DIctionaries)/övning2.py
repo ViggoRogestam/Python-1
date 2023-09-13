@@ -1,5 +1,4 @@
 car_colors = {}
-
 while True:
     
     color = input('Car color > ')
