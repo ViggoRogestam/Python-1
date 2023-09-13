@@ -1,4 +1,3 @@
-import json
 # Lista som innehåller 100 dictionaries med information om personers förnamn, efternamn och ålder
 people = [
 {"forename": "Erik", "surname": "Karlsson", "age": 6},
@@ -164,7 +163,7 @@ age_stats ={
     range(70, 90): 0,
     range(90, 100): 0,
 }
-# iterera genom dicterna för att se hur många personer som finns i varje ålderspann
+# iterera genom dicterna för att se hur många personer som finns i varje åldersspann
 for age_range in age_stats:
     for person in people:
         if person['age'] in age_range:
