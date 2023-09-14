@@ -42,7 +42,7 @@ while True:
         print(artist_info['artist']['name'])
         print('*' * 17)
 
-        # Combines all called upon strings in dict to one string with a ',' between every word
+        # Combines all called upon elements in dict to one string with a ',' between every word
         print('Genres:', ', '.join(artist_info['artist']['genres']))
         print('Years Active:', ', '.join(artist_info['artist']['years_active']))
         print('Memebers:', ', '.join(artist_info['artist']['members']))
