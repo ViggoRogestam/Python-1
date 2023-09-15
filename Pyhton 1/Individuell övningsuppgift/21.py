@@ -102,10 +102,14 @@ print('\n\033[1mDealers Turn:\033[0m')
 print('''- The dealer reveals draws cards until they choose to stand
   or their total points exceeds 21.''')
 print('-' * ui_width)
+
+
 # Deal one more card & print hand
 dealCards(player_hand)
 
+# Ask for user input to start gameloop
 input('Press Enter to start...')
+
 # clear the terminal
 if os.name == 'posix':  # for Unix/Linux/macOS
     os.system('clear')
@@ -119,50 +123,67 @@ while player_in:
         os.system('clear')
     else:  # for other OS:es
         os.system('cls')
+    # Print cards from player hand
     print('\n' + '-' * ui_width)
     print('You drew the following ', end='')
     print('Hand: ', end='')
     for card in player_hand:
         print(card + ', ', end='')
     print(f'for a total of {calculate_card_values(player_hand)}')
+
+    # if player busts break loop
     if calculate_card_values(player_hand) > 21:
         break
+    # if player still in
     if player_in:
-        print( '-' * ui_width)
+        print('-' * ui_width)
         hit_or_stay = input('\n\n1: Hit\n2: Stay\n> ')
+
+        # if player choose to hit add draw card
         if hit_or_stay == '1':
             dealCards(player_hand)
 
+        # if player choose to stay, print hand then break
         elif hit_or_stay == '2':
             print('You choose to stay with this \n Hand: ', end='')
             for card in player_hand:
                 print(card + ', ', end='')
             break
+        # if input not 1 or 2 replay the loop
         else:
             input('Error. Choose either "1" or "2"')
             continue
 
-#  dealers play
+#  dealer play
 while dealer_in:
+    # if dealerhand = empty, draw card
     if not dealer_hand:
         dealCards(dealer_hand)
         continue
+    # if dealerhand is greater 16 => dealer stays and prit out dealer hand
     elif calculate_card_values(dealer_hand) > 16:
         dealer_in = False
         print('\n\nDealer Drew: ', end='')
         for card in dealer_hand:
             print(card + ', ', end='')
         print(f'for a total of {calculate_card_values(dealer_hand)}')
+
+    # if dealer still in, draw card
     elif dealer_in:
         dealCards(dealer_hand)
+
+    # if dealer busts, then break
     elif calculate_card_values(dealer_hand) > 21:
         break
+
 # create variables from player and dealer hand
 score_player_hand = calculate_card_values(player_hand)
 score_dealer_hand = calculate_card_values(dealer_hand)
 
 # IF-statmentes for printing results
-if score_dealer_hand == score_player_hand:
+if score_dealer_hand and score_player_hand > 21:
+    print('\nBoth player and dealr busts! Dealer Wins')
+elif score_dealer_hand == score_player_hand:
     print('\nDealer and player has the same score. Dealer Wins!')
 elif score_dealer_hand == 21:
     print('\n21! Dealer Wins.')
