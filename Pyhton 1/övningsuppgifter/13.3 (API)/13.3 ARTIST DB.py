@@ -20,7 +20,7 @@ while True:
     # Layout
     print('--- ARTIST DB ---')
     # Print out artists in artists_dict
-    # och sparar artisternas namn samt id i en ny dict där namnet blir nyckeln och id:t blir värdet ([Avicii: 214355..])
+    # och sparar artisternas namn samt id i en ny dict där namnet blir nyckeln och id:t blir värdet ({Avicii: 214355..})
     for key in artists_dict['artists']:
         print(key['name'])
         new_dict[key['name']] = key['id']
@@ -28,7 +28,7 @@ while True:
     print('-----------------')
 
     # User input to get desired artist
-    artist = input('Select artist >').capitalize()
+    artist = input('Select artist >').title()
     if artist in new_dict:
         # hämtar id på valda artisten från new_dict
         artist_id = new_dict.get(artist)
@@ -48,8 +48,8 @@ while True:
         print('Memebers:', ', '.join(artist_info['artist']['members']))
 
         print('-----------------')
-        input('\nPress Enter to continue')
+        input('\nPress Enter to exit')
         break
     else:
         print('ERROR: artist not in ARTIST DB')
-        print('\nPress enter to contiue')
+        input('\nPress enter to contiue')

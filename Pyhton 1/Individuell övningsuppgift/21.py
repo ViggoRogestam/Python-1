@@ -29,7 +29,7 @@ def dealCards(turn):
     card = random.choice(deck_of_cards[random_suit])
 
     # Create a variabel that contains suit and card (ex. 'King of Hearts')
-    #full_card_name = card + ' of ' + random_suit
+    # full_card_name = card + ' of ' + random_suit
     # Add the card to the player
     turn.append(card)
     # Remove the card from the deck of cards
@@ -103,7 +103,6 @@ print('''- The dealer reveals draws cards until they choose to stand
   or their total points exceeds 21.''')
 print('-' * ui_width)
 
-
 # Deal one more card & print hand
 dealCards(player_hand)
 
@@ -154,7 +153,7 @@ while player_in:
             input('Error. Choose either "1" or "2"')
             continue
 
-#  dealer play
+#  dealer plays
 while dealer_in:
     # if dealerhand = empty, draw card
     if not dealer_hand:
