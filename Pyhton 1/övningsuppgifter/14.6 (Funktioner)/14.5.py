@@ -16,7 +16,7 @@ teams_list = [{'country': key, 'wins': value['wins'], 'draws': value['draws'], '
 
 # Funktion som tar en nestlad dict och antar att nycklarna är länder och value är statistik. funktionen gör sedan
 # dicten till en lista
-def make_kist(dict: dict):
+def make_list(dict: dict):
     result_list = [
         {'country': key, **value}
         for key, value in dict.items()
@@ -24,7 +24,7 @@ def make_kist(dict: dict):
     return result_list
 
 
-new_list = make_kist(teams_dict)
+new_list = make_list(teams_dict)
 
 
 def print_table(list: list):
@@ -37,7 +37,7 @@ def print_table(list: list):
     print('| # |', 'Nation'.center(10), '|', ' W | D | L | GF | GA | GD | P |')
     print('−' * 50)
     print('| 1 |', str(list[0]['country']).center(10), '|', f'{list[0]["wins"]} | {list[0]["draws"]} | {list[0]["losses"]} | {list[0]["goals_for"]} | {list[0]["goals_against"]} | {list[0]["GD"]} | {list[0]["P"]}')
-
+    for key, value in new_list
 
 print(print_table(teams_list))
 
