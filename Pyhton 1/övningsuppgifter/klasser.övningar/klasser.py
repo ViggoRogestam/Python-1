@@ -151,3 +151,5 @@ class Student:
 s1 = Student("Viggo", ["a", "b", "c", "d", "d", 'd'])
 s1.print_grade()
 print(s1.calc_avrg_grade())
+
+#hejsan
